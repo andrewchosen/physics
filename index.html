@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jGravity Demo</title>
+
+<!-- jQuery *Reequired -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- jGravity file -->
+<script type="text/javascript" src="jGravity-min.js"></script>
+
+<!-- Unimportant CSS File for demo purposes -->
+<link href="http://tinybigideas.com/template/css/colourpadFramework-min.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+
+<script>
+$(document).ready(function() {
+	$('div.jGravity').one('click', function() { // This can be changed to anything you like in order to trigger jGravity effect
+		$('body').jGravity({ // jGravity works best when targeting the body
+			target: 'everything', // Enter your target critera e.g. 'div, p, span', 'h2' or 'div#specificDiv', or even 'everything' to target everything in the body
+			ignoreClass: 'ignoreMe', // Specify if you would like to use an ignore class, and then specify the class
+			weight: 7, // Enter any number 1-100 ideally (25 is default), you can also use 'heavy' or 'light'
+			depth: 5, // Enter a value between 1-10 ideally (1 is default), this is used to prevent targeting structural divs or other items which may break layout in jGravity
+			drag: true // Decide if users can drag elements which have been effected by jGravity
+		});
+
+        $(".goButton").find("h2").addClass("activated");
+		
+	});
+});
+</script>
+
+<style>
+/* Misc styles used for demo purposes */
+body {overflow:hidden; margin:0; padding:0; height:100%;font: 14px/1.4 'Roboto', sans-serif;background-color:#2C3E50;}
+
+div.box {height:100px; width:100px; float:left; margin:10px; color:white; text-align:center;}
+
+div.blackHeader {width:100%; clear:both; height:30px;}
+	div.blackHeader div.headPiece { width:5%; float:left; height:50px;}
+    div.blackHeader div.headPiece:nth-of-type(odd) {background: #3498DB;}
+    div.blackHeader div.headPiece:nth-of-type(even) {background: #2980B9;}
+		div.blackHeader div.headPiece p {color: white;text-align: center;padding-top: 5px;}
+			div.blackHeader div.headPiece p a {color: white;text-decoration: none;}
+		
+div.logoBar {width:100%; height:70px;}
+	div.logoBar div.barPiece {background:#ECF0F1; width:350px; border-bottom:1px solid #E2E2E2; margin: auto;padding: 30px 12px;}
+	div.logoBar h1 {color:#333; text-align:center; font-size:50px; padding:12px; font-weight:normal; margin:0;}	
+		div.logoBar h1 a {color: #333; padding-bottom: 2px;}
+
+div.goBtnCentre {position: absolute;left:0px;top:-22px;width:100%; clear:both; }
+	div.goButton {background: #E74C3C;width:200px; margin:0 auto;}
+		div.goButton h2 {text-align: center;font-size: 25px;color: white;font-weight: normal; cursor: pointer;padding:8px;}
+			div.goButton h2 a {color: white;}
+
+            div.goButton h2.activated {
+                color: rgba(255,255,255,0.5);
+            }
+
+div.duckCentre {width:100%; clear:both; height: 500px; margin:20px 0;}
+	div.duckCentre div.duckInner {width:740px; margin:0 auto;}
+		div.duckCentre div.duck {background:#FFF; float:left; width:200px; height:200px; margin:10px; padding:10px; border:1px solid #eee;}
+</style>
+
+</head>
+
+<body>
+
+<!-- All HTML elements are used for demo purposes - jGravity should work correctly on most layouts. If you do find a problem item/s, play with the depth and ignoring certain items until you get it right -->
+
+<div class="blackHeader ignoreMe">
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+    <div class="headPiece"></div>
+</div>
+
+
+<div class="logoBar ignoreMe">
+    <div class="barPiece">
+		<h1 class="ignoreMe">REALLY <strong class="ignoreMe">AWESOME</strong> WEBSITE</h1>
+    </div>
+</div>
+
+<div class="goBtnCentre ignoreMe">
+    <div class="goButton jGravity ignoreMe">
+        <h2 class="ignoreMe">Activate Gravity</h2>
+    </div>
+</div>
+
+</body>
+</html>
